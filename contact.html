@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -92,26 +92,34 @@
       </div>
 
       <div class="reveal" style="background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow-md);">
-        <h3 style="font-size:22px;margin-bottom:20px;">Send a Direct Message</h3>
-        <form data-demo-form style="display:flex;flex-direction:column;gap:16px;">
+        <h3 style="font-size:22px;margin-bottom:8px;color:#1B2A41;">Send a Direct Message</h3>
+        <p style="font-size:0.9rem;color:#666;margin-bottom:20px;">Submitting this form will open WhatsApp directly with your lead inquiry for Anshu Dubey.</p>
+        
+        <form id="contact-page-form" style="display:flex;flex-direction:column;gap:16px;">
           <div class="field">
-            <label>Your Name</label>
-            <input type="text" placeholder="Enter your full name" required>
+            <label style="font-weight:700;font-size:0.85rem;color:#1B2A41;text-transform:uppercase;margin-bottom:4px;display:block;">Your Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="Enter your full name" required style="padding:12px 16px;border-radius:10px;border:1px solid #CBD5E0;background:#F9F6F0;">
           </div>
           <div class="field">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="+91 98765 43210" required>
+            <label style="font-weight:700;font-size:0.85rem;color:#1B2A41;text-transform:uppercase;margin-bottom:4px;display:block;">Phone Number</label>
+            <input type="tel" id="contact-phone" name="phone" placeholder="+91 98765 43210" required style="padding:12px 16px;border-radius:10px;border:1px solid #CBD5E0;background:#F9F6F0;">
           </div>
           <div class="field">
-            <label>Preferred Location</label>
-            <select><option>Varanasi</option><option>Allahabad / Prayagraj</option><option>Bihar</option><option>Madhya Pradesh (MP)</option></select>
+            <label style="font-weight:700;font-size:0.85rem;color:#1B2A41;text-transform:uppercase;margin-bottom:4px;display:block;">Preferred Location</label>
+            <select id="contact-location" name="location" style="padding:12px 16px;border-radius:10px;border:1px solid #CBD5E0;background:#F9F6F0;">
+              <option>Varanasi (Ring Road / Shivpur / Babatpur)</option>
+              <option>Allahabad / Prayagraj</option>
+              <option>Bihar Highway Frontage</option>
+              <option>Madhya Pradesh (MP)</option>
+            </select>
           </div>
           <div class="field">
-            <label>Message / Requirements</label>
-            <input type="text" placeholder="Looking for VDA approved plot, villa, etc." required>
+            <label style="font-weight:700;font-size:0.85rem;color:#1B2A41;text-transform:uppercase;margin-bottom:4px;display:block;">Message / Requirements</label>
+            <textarea id="contact-message" name="message" placeholder="Looking for VDA approved plot, villa, budget details, etc." required style="padding:12px 16px;border-radius:10px;border:1px solid #CBD5E0;background:#F9F6F0;rows:3;"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
-          <div class="form-note" style="font-size:14px;margin-top:8px;"></div>
+          <button type="submit" class="btn btn-gold btn-block" style="padding:14px;font-weight:700;font-size:1.05rem;margin-top:6px;">
+            <i class="fa-brands fa-whatsapp" style="font-size:1.2rem;margin-right:6px;"></i> Send Inquiry via WhatsApp
+          </button>
         </form>
       </div>
     </div>

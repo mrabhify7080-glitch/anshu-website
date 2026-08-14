@@ -331,14 +331,15 @@
         }
 
         // Format WhatsApp Message for instant owner notification
-        let summaryMsg = `Namaste Anshu Ji! New Website Lead:\n`;
-        summaryMsg += `Type: ${lead.mode}\n`;
+        let summaryMsg = `🚨 *NEW WEBSITE LEAD (RAGINI AI ASSISTANT)* 🌐\n-------------------------\n`;
+        summaryMsg += `📋 *Type:* ${lead.mode}\n`;
         if (lead.mode === 'BUYER') {
-            summaryMsg += `Location: ${lead.location}\nBudget: ${lead.budget}\nPlot: ${lead.sizeType}\nTimeline: ${lead.urgency}\n`;
+            summaryMsg += `📍 *Location:* ${lead.location}\n💰 *Budget:* ${lead.budget}\n🏡 *Plot Type:* ${lead.sizeType}\n⚡ *Timeline:* ${lead.urgency}\n`;
         } else {
-            summaryMsg += `Location & Size: ${lead.location}\nVDA/RERA: ${lead.vdaStatus}\nPrice: ${lead.expectedPrice}\nDocs: ${lead.docsStatus}\n`;
+            summaryMsg += `📍 *Location & Size:* ${lead.location}\n📄 *VDA/RERA:* ${lead.vdaStatus}\n💰 *Expected Price:* ${lead.expectedPrice}\n📝 *Docs:* ${lead.docsStatus}\n`;
         }
-        summaryMsg += `Contact Info: ${lead.name}`;
+        summaryMsg += `👤 *Contact Info:* ${lead.name}\n`;
+        summaryMsg += `-------------------------\n🌐 *Source:* AnshuProperties.com (Ragini AI Chat)`;
 
         const encodedWhatsApp = encodeURIComponent(summaryMsg);
         const waLink = `https://wa.me/918303727724?text=${encodedWhatsApp}`;

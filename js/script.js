@@ -228,21 +228,22 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const nameEl = form.querySelector('[name="name"], #name, input[type="text"]');
-      const phoneEl = form.querySelector('[name="phone"], #phone, input[type="tel"]');
-      const emailEl = form.querySelector('[name="email"], #email, input[type="email"]');
-      const msgEl = form.querySelector('[name="message"], #message, textarea');
+      const nameEl = form.querySelector('[name="name"], #contact-name, #name, input[type="text"]');
+      const phoneEl = form.querySelector('[name="phone"], #contact-phone, #phone, input[type="tel"]');
+      const locEl = form.querySelector('[name="location"], #contact-location, select');
+      const msgEl = form.querySelector('[name="message"], #contact-message, #message, textarea');
 
-      const name = nameEl ? nameEl.value : 'Customer';
-      const phone = phoneEl ? phoneEl.value : '';
-      const email = emailEl ? emailEl.value : '';
-      const message = msgEl ? msgEl.value : '';
+      const name = nameEl ? nameEl.value.trim() : 'Customer';
+      const phone = phoneEl ? phoneEl.value.trim() : '';
+      const location = locEl ? locEl.value : 'Varanasi';
+      const message = msgEl ? msgEl.value.trim() : '';
 
-      let text = `Namaste Anshu Ji! Website Form Inquiry:\n`;
-      text += `Name: ${name}\n`;
-      if (phone) text += `Phone: ${phone}\n`;
-      if (email) text += `Email: ${email}\n`;
-      if (message) text += `Message: ${message}\n`;
+      let text = `🚨 *NEW WEBSITE FORM INQUIRY* 🌐\n-------------------------\n`;
+      text += `👤 *Name:* ${name}\n`;
+      if (phone) text += `📞 *Phone:* ${phone}\n`;
+      if (location) text += `📍 *Preferred Location:* ${location}\n`;
+      if (message) text += `📝 *Requirement:* ${message}\n`;
+      text += `-------------------------\n🌐 *Source:* AnshuProperties.com (Official Website Form)`;
 
       const waUrl = `https://wa.me/918303727724?text=${encodeURIComponent(text)}`;
       window.open(waUrl, '_blank') || (window.location.href = waUrl);
