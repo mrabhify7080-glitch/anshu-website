@@ -162,6 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const reelModal = document.createElement('div');
   reelModal.className = 'reel-modal';
   reelModal.id = 'reel-lightbox-modal';
+  reelModal.style.display = 'none';
+  reelModal.style.opacity = '0';
+  reelModal.style.pointerEvents = 'none';
   reelModal.innerHTML = `
     <div class="reel-modal-content">
       <button class="reel-modal-close" aria-label="Close modal">&times;</button>
@@ -174,7 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalClose = reelModal.querySelector('.reel-modal-close');
 
   const closeModal = () => {
-    reelModal.classList.remove('active');
+    reelModal.classList.remove('active', 'show');
+    reelModal.style.display = 'none';
+    reelModal.style.opacity = '0';
+    reelModal.style.pointerEvents = 'none';
     reelContainer.innerHTML = '';
   };
 
@@ -195,6 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       reelContainer.innerHTML = `<iframe src="${embedUrl}" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>`;
+      reelModal.style.display = 'flex';
+      reelModal.style.opacity = '1';
+      reelModal.style.pointerEvents = 'auto';
       reelModal.classList.add('active');
     });
   });
