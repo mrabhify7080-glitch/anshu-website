@@ -53,9 +53,28 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--body-text);
-  background-color: var(--bg-page);
+  background-color: #F9F6F0 !important; /* Warm Ivory Main Page Background */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Explicit Section Background Rhythm Classes */
+.bg-ivory, section.section-ivory {
+  background-color: #F9F6F0 !important;
+}
+
+.bg-white, section.section-white {
+  background-color: #FFFFFF !important;
+}
+
+.bg-navy, section.section-navy {
+  background-color: #1B2A41 !important;
+  color: #FFFFFF !important;
+}
+
+.bg-maroon, section.section-maroon {
+  background-color: #7A2E2E !important;
+  color: #FFFFFF !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
