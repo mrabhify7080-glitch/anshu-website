@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
 
-  /* Scroll reveal animation */
+  /* Scroll reveal animation with safe progressive enhancement */
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealEls.length) {
     const io = new IntersectionObserver((entries) => {
@@ -55,13 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
+
     revealEls.forEach((el, i) => {
-      el.style.transitionDelay = `${(i % 4) * 90}ms`;
+      el.classList.add('js-reveal');
+      el.style.transitionDelay = `${(i % 4) * 80}ms`;
       io.observe(el);
     });
-  } else {
-    revealEls.forEach(el => el.classList.add('in'));
   }
 
   /* Counter animation */
