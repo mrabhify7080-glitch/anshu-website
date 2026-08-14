@@ -1017,12 +1017,22 @@ img {
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background: rgba(18, 28, 43, 0.85);
-  backdrop-filter: blur(8px);
-  display: flex;
+  background: rgba(18, 28, 43, 0.88);
+  backdrop-filter: blur(10px);
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.reel-modal.active,
+.reel-modal.show {
+  display: flex !important;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .reel-modal-content {
