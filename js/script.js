@@ -214,6 +214,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* Contact & Inquiry Form Direct WhatsApp Redirect */
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nameEl = form.querySelector('[name="name"], #name, input[type="text"]');
+      const phoneEl = form.querySelector('[name="phone"], #phone, input[type="tel"]');
+      const emailEl = form.querySelector('[name="email"], #email, input[type="email"]');
+      const msgEl = form.querySelector('[name="message"], #message, textarea');
+
+      const name = nameEl ? nameEl.value : 'Customer';
+      const phone = phoneEl ? phoneEl.value : '';
+      const email = emailEl ? emailEl.value : '';
+      const message = msgEl ? msgEl.value : '';
+
+      let text = `Namaste Anshu Ji! Website Form Inquiry:\n`;
+      text += `Name: ${name}\n`;
+      if (phone) text += `Phone: ${phone}\n`;
+      if (email) text += `Email: ${email}\n`;
+      if (message) text += `Message: ${message}\n`;
+
+      const waUrl = `https://wa.me/918303727724?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank') || (window.location.href = waUrl);
+    });
+  });
+
 });
+
 
 

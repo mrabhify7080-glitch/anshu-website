@@ -345,11 +345,16 @@
 
         appendBotMsg(`
             🎉 <strong>Thank You! Your details have been submitted.</strong><br><br>
-            Mr. Anshu Dubey will review your requirement and contact you shortly.<br><br>
+            Redirecting you directly to WhatsApp...<br><br>
             <a href="${waLink}" target="_blank" style="display:inline-flex; align-items:center; gap:8px; background:#25D366; color:#FFF; padding:10px 18px; border-radius:20px; font-weight:700; text-decoration:none;">
-                <i class="fa-brands fa-whatsapp" style="font-size:1.2rem;"></i> Click to Send Lead on WhatsApp
+                <i class="fa-brands fa-whatsapp" style="font-size:1.2rem;"></i> Open WhatsApp Now
             </a>
         `);
+
+        // Automatically open WhatsApp directly
+        setTimeout(function() {
+            window.open(waLink, '_blank') || (window.location.href = waLink);
+        }, 600);
     }
 
     // UI Append Helper Functions
