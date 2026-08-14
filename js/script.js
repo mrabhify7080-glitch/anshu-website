@@ -182,5 +182,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* 3D Tilt Parallax on Hero Property Visual */
+  const heroVisual = document.querySelector('.hero-visual');
+  if (heroVisual) {
+    heroVisual.addEventListener('mousemove', (e) => {
+      const rect = heroVisual.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      heroVisual.style.transform = `perspective(1000px) rotateY(${x / 35}deg) rotateX(${-y / 35}deg)`;
+    });
+    heroVisual.addEventListener('mouseleave', () => {
+      heroVisual.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+      heroVisual.style.transition = 'transform 0.5s ease';
+    });
+  }
+
 });
+
 

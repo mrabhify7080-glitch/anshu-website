@@ -1148,14 +1148,112 @@ img {
   pointer-events: auto;
 }
 
-/* ---------- Scroll Reveal ---------- */
+/* ==========================================================================
+   Live Graphic Animations & Dynamic FX
+   ========================================================================== */
+
+/* Live pulse indicator dot */
+.live-dot {
+  width: 9px;
+  height: 9px;
+  background-color: #10B981;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: livePulse 2s infinite;
+  margin-right: 6px;
+}
+
+@keyframes livePulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* Continuous slow seal icon spin */
+.seal-icon {
+  animation: spinSeal 12s linear infinite;
+}
+
+@keyframes spinSeal {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Gold Shimmer Light Sweep on Gold Buttons & Seals */
+.btn-gold, .seal-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::before, .seal-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: goldShimmer 4s infinite;
+}
+
+@keyframes goldShimmer {
+  0% { left: -100%; }
+  25% { left: 180%; }
+  100% { left: 180%; }
+}
+
+/* Floating background glow pulse */
+.hero-bg-shape {
+  animation: pulseGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.15) translate(-20px, 20px);
+    opacity: 1;
+  }
+}
+
+/* Scroll reveal with staggered animation */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal.in {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Card hover smooth lift with gold glow border */
+.property-card, .feature-card, .location-card, .blog-card, .stat-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.property-card:hover, .feature-card:hover, .location-card:hover, .blog-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(18, 28, 43, 0.12), 0 0 20px rgba(200, 155, 60, 0.18);
+}
+
