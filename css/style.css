@@ -1173,8 +1173,7 @@ img {
 }
 
 .fab-whatsapp {
-  background: #25D366;
-  color: #fff;
+  display: none !important;
 }
 
 .fab-top {
