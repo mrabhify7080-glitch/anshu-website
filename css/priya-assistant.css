@@ -1,0 +1,341 @@
+/* ==========================================================================
+   PRIYA AI CHAT ASSISTANT - GLOBAL STYLES
+   ========================================================================== */
+
+#priya-widget-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999999;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Floating Gold Trigger Bubble */
+#priya-trigger-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #D4AF37 0%, #C89B3C 100%);
+    color: #121C2D;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 10px 30px rgba(200, 155, 60, 0.45);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+#priya-trigger-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 14px 35px rgba(200, 155, 60, 0.6);
+}
+
+.priya-trigger-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.priya-online-dot {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 14px;
+    height: 14px;
+    background-color: #25D366;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+/* Floating Tooltip Bubble */
+#priya-tooltip {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 260px;
+    background: #FFFFFF;
+    color: #1B2A41;
+    padding: 12px 16px;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+    border: 2px solid #C89B3C;
+    font-size: 0.86rem;
+    line-height: 1.4;
+    animation: priyaBounce 0.5s ease;
+}
+
+#priya-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 22px;
+    border-width: 10px 0 0 10px;
+    border-style: solid;
+    border-color: #C89B3C transparent transparent transparent;
+}
+
+.priya-tooltip-close {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #888;
+}
+
+/* Chat Window Container */
+#priya-chat-box {
+    position: fixed;
+    bottom: 95px;
+    right: 25px;
+    width: 370px;
+    max-width: calc(100vw - 30px);
+    height: 520px;
+    background-color: #F9F6F0; /* Ivory Background */
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+    border: 2px solid #C89B3C;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.priya-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px) scale(0.94);
+}
+
+/* Header (Navy #1B2A41) */
+.priya-header {
+    background-color: #1B2A41;
+    color: #FFFFFF;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #C89B3C;
+}
+
+.priya-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.priya-header-avatar {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #C89B3C;
+}
+
+.priya-header-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.priya-header-info h4 {
+    font-size: 1.05rem;
+    color: #FFFFFF;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.priya-status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    color: #25D366;
+    font-weight: 600;
+}
+
+.priya-status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.priya-close-btn {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 26px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.priya-close-btn:hover {
+    color: #C89B3C;
+}
+
+/* Messages List Body (Ivory #F9F6F0) */
+.priya-messages-body {
+    flex: 1;
+    padding: 18px;
+    overflow-y: auto;
+    background-color: #F9F6F0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.priya-msg-row {
+    display: flex;
+    flex-direction: column;
+    max-width: 84%;
+}
+
+/* Priya Messages (Left - White Bubble) */
+.priya-msg-left {
+    align-self: flex-start;
+}
+
+.priya-msg-left .priya-bubble {
+    background-color: #FFFFFF;
+    color: #1B2A41;
+    border-radius: 18px 18px 18px 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E5E0D8;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* User Messages (Right - Gold Bubble) */
+.priya-msg-right {
+    align-self: flex-end;
+}
+
+.priya-msg-right .priya-bubble {
+    background-color: #C89B3C;
+    color: #FFFFFF;
+    border-radius: 18px 18px 4px 18px;
+    box-shadow: 0 4px 12px rgba(200, 155, 60, 0.25);
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.priya-msg-time {
+    font-size: 0.68rem;
+    color: #888888;
+    margin-top: 4px;
+}
+
+.priya-msg-left .priya-msg-time {
+    align-self: flex-start;
+}
+
+.priya-msg-right .priya-msg-time {
+    align-self: flex-end;
+}
+
+/* Option Buttons & Chips */
+.priya-options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.priya-opt-btn {
+    background: #FFFFFF;
+    border: 1.5px solid #C89B3C;
+    color: #1B2A41;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.priya-opt-btn:hover {
+    background: #C89B3C;
+    color: #FFFFFF;
+}
+
+/* Footer / Input Area */
+.priya-footer {
+    background: #FFFFFF;
+    padding: 12px 16px;
+    border-top: 1px solid #E5E0D8;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#priya-input {
+    flex: 1;
+    border: 1.5px solid #D5CEC3;
+    border-radius: 25px;
+    padding: 11px 18px;
+    font-size: 0.9rem;
+    outline: none;
+    background: #F9F6F0;
+    color: #1B2A41;
+}
+
+#priya-input:focus {
+    border-color: #C89B3C;
+    background: #FFFFFF;
+}
+
+#priya-send-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #1B2A41;
+    color: #C89B3C;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+}
+
+#priya-send-btn:hover {
+    background: #C89B3C;
+    color: #1B2A41;
+}
+
+@keyframes priyaBounce {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    #priya-widget-container {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    #priya-chat-box {
+        bottom: 85px;
+        right: 15px;
+        height: 460px;
+    }
+}
