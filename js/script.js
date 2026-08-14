@@ -141,17 +141,46 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prev) prev.addEventListener('click', () => go(idx - 1));
   }
 
-  /* Demo form submission */
-  document.querySelectorAll('form[data-demo-form]').forEach(form => {
-    form.addEventListener('submit', (e) => {
+  /* Reel Lightbox Modal */
+  const reelModal = document.createElement('div');
+  reelModal.className = 'reel-modal';
+  reelModal.id = 'reel-lightbox-modal';
+  reelModal.innerHTML = `
+    <div class="reel-modal-content">
+      <button class="reel-modal-close" aria-label="Close modal">&times;</button>
+      <div class="reel-iframe-container" id="reel-container"></div>
+    </div>
+  `;
+  document.body.appendChild(reelModal);
+
+  const reelContainer = document.getElementById('reel-container');
+  const modalClose = reelModal.querySelector('.reel-modal-close');
+
+  const closeModal = () => {
+    reelModal.classList.remove('active');
+    reelContainer.innerHTML = '';
+  };
+
+  modalClose.addEventListener('click', closeModal);
+  reelModal.addEventListener('click', (e) => {
+    if (e.target === reelModal) closeModal();
+  });
+
+  document.querySelectorAll('[data-reel-url]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
       e.preventDefault();
-      const note = form.querySelector('.form-note');
-      if (note) {
-        note.textContent = 'Thank you! Our property expert will contact you within 24 hours.';
-        note.style.color = 'var(--teal)';
+      const reelUrl = trigger.getAttribute('data-reel-url');
+      if (!reelUrl) return;
+      
+      let embedUrl = reelUrl;
+      if (!embedUrl.endsWith('/embed')) {
+        embedUrl = embedUrl.replace(/\/$/, '') + '/embed';
       }
-      form.reset();
+
+      reelContainer.innerHTML = `<iframe src="${embedUrl}" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>`;
+      reelModal.classList.add('active');
     });
   });
 
 });
+
