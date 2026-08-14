@@ -13,9 +13,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.menu-toggle');
   const navMobile = document.querySelector('.nav-mobile');
   if (menuToggle && navMobile) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       navMobile.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', navMobile.classList.contains('open'));
+      navMobile.classList.toggle('show');
+      const isOpen = navMobile.classList.contains('open') || navMobile.classList.contains('show');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navMobile.contains(e.target) && !menuToggle.contains(e.target)) {
+        navMobile.classList.remove('open', 'show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    navMobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMobile.classList.remove('open', 'show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 
