@@ -22,7 +22,7 @@
             budget: '',
             sizeType: '',
             urgency: '',
-            vdaStatus: '',
+            legalStatus: '',
             expectedPrice: '',
             docsStatus: '',
             name: '',
@@ -192,9 +192,9 @@
             appendBotMsg("Where is your plot located and what is the approximate size (sq ft / biswa)?");
         } else if (stepNum === 2) {
             appendBotMsgWithChips(
-                "Is your plot VDA Approved or UP RERA Registered?",
+                "What is your plot requirement or preferred location?",
                 [
-                    { label: "✅ VDA Approved / RERA Registered", value: "VDA / RERA Approved" },
+                    { label: "✅ 100% Clear Title / Ready Registry", value: "Clear Title / Ready Registry" },
                     { label: "📄 Freehold / Private Land", value: "Freehold Land" },
                     { label: "❓ Not sure / Need Verification", value: "Unsure" }
                 ]
@@ -261,7 +261,7 @@
         const q = text.toLowerCase();
         setTimeout(() => {
             if (q.includes('price') || q.includes('rate') || q.includes('cost')) {
-                appendBotMsg("Our plots start from attractive price points depending on location. Would you like to check specific VDA plots on WhatsApp?<br><br><a href='https://wa.me/918303727724?text=Hello%20Anshu%20ji,%20I%20want%20to%20know%20plot%20prices' target='_blank' style='color:#25D366; font-weight:700;'>💬 Connect on WhatsApp (+91 83037 27724)</a>");
+                appendBotMsg("Our plots start from attractive price points depending on location. Would you like to check specific Plots on WhatsApp?<br><br><a href='https://wa.me/918303727724?text=Hello%20Anshu%20ji,%20I%20want%20to%20know%20plot%20prices' target='_blank' style='color:#25D366; font-weight:700;'>💬 Connect on WhatsApp (+91 83037 27724)</a>");
             } else if (q.includes('contact') || q.includes('phone') || q.includes('anshu')) {
                 appendBotMsg("You can connect directly with owner <strong>Mr. Anshu Dubey</strong>:<br>📞 Call: <strong>+91 83037 27724</strong><br>✉️ Email: <strong>anshudubey3409@gmail.com</strong><br><br><a href='https://wa.me/918303727724' target='_blank' style='color:#25D366; font-weight:700;'>💬 Open Direct WhatsApp Chat</a>");
             } else {
@@ -303,7 +303,7 @@
             }
         } else if (state.mode === 'sell') {
             if (state.step === 2) {
-                state.data.vdaStatus = val;
+                state.data.legalStatus = val;
                 setTimeout(() => askSellStep(3), 500);
             } else if (state.step === 4) {
                 state.data.docsStatus = val;
@@ -331,7 +331,7 @@
         if (lead.mode === 'BUYER') {
             summaryMsg += `Location: ${lead.location}\nBudget: ${lead.budget}\nPlot: ${lead.sizeType}\nTimeline: ${lead.urgency}\n`;
         } else {
-            summaryMsg += `Location & Size: ${lead.location}\nVDA/RERA: ${lead.vdaStatus}\nPrice: ${lead.expectedPrice}\nDocs: ${lead.docsStatus}\n`;
+            summaryMsg += `Location & Size: ${lead.location}\nLegal Status: ${lead.legalStatus}\nPrice: ${lead.expectedPrice}\nDocs: ${lead.docsStatus}\n`;
         }
         summaryMsg += `Contact Info: ${lead.name}`;
 
