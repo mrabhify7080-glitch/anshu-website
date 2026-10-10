@@ -13,26 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.menu-toggle');
   const navMobile = document.querySelector('.nav-mobile');
   if (menuToggle && navMobile) {
-    menuToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
+    menuToggle.addEventListener('click', () => {
       navMobile.classList.toggle('open');
-      navMobile.classList.toggle('show');
-      const isOpen = navMobile.classList.contains('open') || navMobile.classList.contains('show');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!navMobile.contains(e.target) && !menuToggle.contains(e.target)) {
-        navMobile.classList.remove('open', 'show');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    navMobile.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMobile.classList.remove('open', 'show');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      });
+      menuToggle.setAttribute('aria-expanded', navMobile.classList.contains('open'));
     });
   }
 
@@ -45,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
 
-  /* Scroll reveal animation with safe progressive enhancement */
+  /* Scroll reveal animation */
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealEls.length) {
     const io = new IntersectionObserver((entries) => {
@@ -55,13 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
-
+    }, { threshold: 0.15 });
     revealEls.forEach((el, i) => {
-      el.classList.add('js-reveal');
-      el.style.transitionDelay = `${(i % 4) * 80}ms`;
+      el.style.transitionDelay = `${(i % 4) * 90}ms`;
       io.observe(el);
     });
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
   }
 
   /* Counter animation */
@@ -162,9 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const reelModal = document.createElement('div');
   reelModal.className = 'reel-modal';
   reelModal.id = 'reel-lightbox-modal';
-  reelModal.style.display = 'none';
-  reelModal.style.opacity = '0';
-  reelModal.style.pointerEvents = 'none';
   reelModal.innerHTML = `
     <div class="reel-modal-content">
       <button class="reel-modal-close" aria-label="Close modal">&times;</button>
@@ -177,10 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalClose = reelModal.querySelector('.reel-modal-close');
 
   const closeModal = () => {
-    reelModal.classList.remove('active', 'show');
-    reelModal.style.display = 'none';
-    reelModal.style.opacity = '0';
-    reelModal.style.pointerEvents = 'none';
+    reelModal.classList.remove('active');
     reelContainer.innerHTML = '';
   };
 
@@ -201,56 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       reelContainer.innerHTML = `<iframe src="${embedUrl}" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>`;
-      reelModal.style.display = 'flex';
-      reelModal.style.opacity = '1';
-      reelModal.style.pointerEvents = 'auto';
       reelModal.classList.add('active');
     });
   });
 
-  /* 3D Tilt Parallax on Hero Property Visual */
-  const heroVisual = document.querySelector('.hero-visual');
-  if (heroVisual) {
-    heroVisual.addEventListener('mousemove', (e) => {
-      const rect = heroVisual.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      heroVisual.style.transform = `perspective(1000px) rotateY(${x / 35}deg) rotateX(${-y / 35}deg)`;
-    });
-    heroVisual.addEventListener('mouseleave', () => {
-      heroVisual.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
-      heroVisual.style.transition = 'transform 0.5s ease';
-    });
-  }
-
-  /* Contact & Inquiry Form Direct WhatsApp Redirect */
-  document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const nameEl = form.querySelector('[name="name"], #contact-name, #name, input[type="text"]');
-      const phoneEl = form.querySelector('[name="phone"], #contact-phone, #phone, input[type="tel"]');
-      const locEl = form.querySelector('[name="location"], #contact-location, select');
-      const msgEl = form.querySelector('[name="message"], #contact-message, #message, textarea');
-
-      const name = nameEl ? nameEl.value.trim() : 'Customer';
-      const phone = phoneEl ? phoneEl.value.trim() : '';
-      const location = locEl ? locEl.value : 'Varanasi';
-      const message = msgEl ? msgEl.value.trim() : '';
-
-      let text = `🚨 *NEW WEBSITE FORM INQUIRY* 🌐\n-------------------------\n`;
-      text += `👤 *Name:* ${name}\n`;
-      if (phone) text += `📞 *Phone:* ${phone}\n`;
-      if (location) text += `📍 *Preferred Location:* ${location}\n`;
-      if (message) text += `📝 *Requirement:* ${message}\n`;
-      text += `-------------------------\n🌐 *Source:* AnshuProperties.com (Official Website Form)`;
-
-      const waUrl = `https://wa.me/918303727724?text=${encodeURIComponent(text)}`;
-      window.open(waUrl, '_blank') || (window.location.href = waUrl);
-    });
-  });
-
 });
-
-
 
