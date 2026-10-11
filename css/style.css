@@ -1535,15 +1535,18 @@ img {
   margin: 0;
 }
 
-/* ---------- Section 4: Why Us ---------- */
+/* ---------- Section 4: Why Us (Philosophy & Methodology) ---------- */
 .why-us-grid {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 48px;
-  align-items: center;
+  grid-template-columns: 1fr 1.22fr;
+  gap: 52px;
+  align-items: start;
 }
-@media (max-width: 860px) {
-  .why-us-grid { grid-template-columns: 1fr; gap: 32px; }
+@media (max-width: 960px) {
+  .why-us-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
 }
 
 .why-us-left h2 {
@@ -1552,46 +1555,160 @@ img {
   margin-bottom: 18px;
   line-height: 1.25;
 }
-.why-us-left p {
-  font-size: 16.5px;
-  color: var(--body-text);
-  line-height: 1.7;
-}
-
-.why-us-checklist {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.why-us-item {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 15px;
+.why-us-left .why-intro-lead {
+  font-size: 17px;
   font-weight: 600;
   color: var(--navy-dark);
-  transition: all 0.25s ease;
+  margin-bottom: 12px;
+  line-height: 1.5;
 }
-.why-us-item:hover {
-  border-color: var(--gold);
-  transform: translateX(4px);
-  box-shadow: var(--shadow-sm);
+.why-us-left .why-intro-desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 24px;
 }
-.why-check-icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: rgba(200, 155, 60, 0.15);
+
+.why-philosophy-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  box-shadow: 0 4px 20px rgba(11, 27, 43, 0.04);
+}
+.why-quote-text {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--body-text);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.why-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.why-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(200, 155, 60, 0.1);
   color: var(--gold-dark);
+  border: 1px solid rgba(200, 155, 60, 0.25);
+}
+
+/* Right Column: 2x3 Matrix */
+.why-cards-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+@media (max-width: 580px) {
+  .why-cards-matrix {
+    grid-template-columns: 1fr;
+  }
+}
+
+.why-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(11, 27, 43, 0.03);
+}
+.why-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  box-shadow: 0 6px 18px rgba(200, 155, 60, 0.12);
+}
+
+.why-card-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(200, 155, 60, 0.12);
+  color: var(--gold-dark);
+  font-size: 12px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+.why-card-text {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--navy-dark);
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+/* Execution Banner */
+.why-execution-banner {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, #13273D 100%);
+  border: 1px solid rgba(200, 155, 60, 0.35);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(11, 27, 43, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+.why-execution-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px;
+  height: 100%;
+  background: radial-gradient(circle, rgba(200, 155, 60, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.why-exec-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(200, 155, 60, 0.2);
+  border: 1px solid rgba(200, 155, 60, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold-light);
+}
+.why-exec-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--gold-light);
+}
+.why-exec-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 4px;
+}
+.why-exec-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.35;
 }
 
 /* ---------- Section 5: Process (5 Steps) ---------- */
