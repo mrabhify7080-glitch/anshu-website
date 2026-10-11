@@ -1322,3 +1322,517 @@ img {
   box-shadow: 0 20px 40px rgba(18, 28, 43, 0.12), 0 0 20px rgba(200, 155, 60, 0.18);
 }
 
+/* ==========================================================================
+   Real Estate Content Creator & Social Media Strategist Homepage Styles
+   ========================================================================== */
+
+/* ---------- 50/50 Creator Hero ---------- */
+.creator-hero {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #152238 100%);
+  color: var(--white);
+  padding: 70px 0 85px;
+  position: relative;
+  overflow: hidden;
+}
+
+.creator-hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  min-height: 640px;
+}
+
+.creator-hero-content {
+  flex: 1 1 52%;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+}
+
+.creator-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(200, 155, 60, 0.12);
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 22px;
+}
+
+.creator-hero h1 {
+  font-size: clamp(32px, 3.6vw, 48px);
+  color: var(--white);
+  line-height: 1.18;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.creator-hero-sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.creator-hero-serviceline {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold-light);
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 3px solid var(--gold);
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
+
+.creator-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.creator-hero-image-wrap {
+  flex: 0 0 46%;
+  max-width: 46%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.creator-hero-img {
+  width: 100%;
+  max-width: 460px;
+  height: 640px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--radius);
+  border: 2px solid var(--gold);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 30px rgba(200, 155, 60, 0.2);
+}
+
+@media (max-width: 960px) {
+  .creator-hero {
+    padding: 48px 0 60px;
+  }
+  .creator-hero-inner {
+    flex-direction: column;
+    min-height: auto;
+    gap: 32px;
+  }
+  .creator-hero-content {
+    max-width: 100%;
+  }
+  .creator-hero-image-wrap {
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+    order: 5;
+  }
+  .creator-hero-img {
+    max-width: 100%;
+    height: 400px;
+    max-height: 420px;
+    aspect-ratio: 4 / 3;
+    object-position: center 20%;
+  }
+}
+
+/* ---------- Section 2: The Problem ---------- */
+.problem-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  padding: 48px;
+  box-shadow: var(--shadow-sm);
+  max-width: 980px;
+  margin: 0 auto;
+}
+.problem-lead {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 16px;
+  font-family: var(--font-heading);
+}
+.problem-text {
+  font-size: 17px;
+  color: var(--body-text);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.problem-highlight {
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--terracotta);
+  background: rgba(184, 91, 53, 0.08);
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  margin: 0;
+}
+
+/* ---------- Section 3: What We Do ---------- */
+.services-creator-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media (max-width: 992px) {
+  .services-creator-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .services-creator-grid { grid-template-columns: 1fr; }
+}
+
+.creator-service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 34px 28px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.creator-service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
+}
+.service-index {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.creator-service-card h3 {
+  font-size: 20px;
+  color: var(--navy-dark);
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+.creator-service-card p {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Section 4: Why Us ---------- */
+.why-us-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .why-us-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.why-us-left h2 {
+  font-size: clamp(28px, 3.2vw, 40px);
+  color: var(--navy-dark);
+  margin-bottom: 18px;
+  line-height: 1.25;
+}
+.why-us-left p {
+  font-size: 16.5px;
+  color: var(--body-text);
+  line-height: 1.7;
+}
+
+.why-us-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.why-us-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy-dark);
+  transition: all 0.25s ease;
+}
+.why-us-item:hover {
+  border-color: var(--gold);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+.why-check-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(200, 155, 60, 0.15);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ---------- Section 5: Process (5 Steps) ---------- */
+.process-5-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1080px) {
+  .process-5-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .process-5-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .process-5-grid { grid-template-columns: 1fr; }
+}
+
+.process-step-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.process-step-box:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
+}
+.process-num {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.process-step-box h4 {
+  font-size: 17px;
+  color: var(--navy-dark);
+  margin-bottom: 8px;
+}
+.process-step-box p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---------- Section 6: Who We Work With (7 targets) ---------- */
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 960px) {
+  .industry-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .industry-grid { grid-template-columns: 1fr; }
+}
+
+.industry-tile {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 22px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--navy-dark);
+  transition: all 0.25s ease;
+}
+.industry-tile:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.industry-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ---------- Section 7: Portfolio (7 categories) ---------- */
+.portfolio-7-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 960px) {
+  .portfolio-7-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px) {
+  .portfolio-7-grid { grid-template-columns: 1fr; }
+}
+
+.portfolio-cat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-cat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
+}
+.portfolio-cat-thumb {
+  background: linear-gradient(135deg, #121C2B 0%, #1B2A41 100%);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  padding: 24px;
+  position: relative;
+}
+.portfolio-play-pill {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  margin-bottom: 8px;
+}
+.portfolio-cat-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+.portfolio-cat-body h4 {
+  font-size: 16.5px;
+  color: var(--navy-dark);
+}
+.portfolio-cat-body p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- Section 8: Meet Anshu ---------- */
+.about-creator-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .about-creator-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.about-creator-img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 2px solid var(--gold);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-creator-copy h2 {
+  font-size: clamp(28px, 3.2vw, 40px);
+  color: var(--navy-dark);
+  margin-bottom: 6px;
+}
+.about-creator-subtitle {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 20px;
+}
+.about-creator-copy p {
+  font-size: 16px;
+  color: var(--body-text);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+/* ---------- Section 9: Real Estate Experience (Secondary) ---------- */
+.secondary-exp-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Section 10: Final Consultation CTA ---------- */
+.final-consultation-banner {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-lg);
+  padding: 60px 48px;
+  color: var(--white);
+  box-shadow: 0 20px 50px rgba(18, 28, 43, 0.3);
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.final-consultation-banner h2 {
+  font-size: clamp(28px, 3.2vw, 42px);
+  color: var(--white);
+  margin-bottom: 24px;
+  line-height: 1.25;
+}
+.final-questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.final-cta-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+
+
