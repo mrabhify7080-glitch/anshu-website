@@ -182,5 +182,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* Interactive Philosophy Stepper Cards */
+  const stepperCards = document.querySelectorAll('.stepper-card');
+  if (stepperCards.length) {
+    stepperCards.forEach(card => {
+      card.addEventListener('click', () => {
+        stepperCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+    });
+  }
+
 });
 
