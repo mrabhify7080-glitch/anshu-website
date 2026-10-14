@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Project Enquiry | Anshu Properties Content Studio</title>
+  <meta name="description" content="Get in touch with Anshu Properties digital content studio. Request a content quote, discuss video scripts, or plan your monthly social calendar.">
+  <link rel="canonical" href="https://www.anshuproperties.com/studio/contact.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/studio.css">
+</head>
+<body>
+
+  <!-- Notice Ribbon -->
+  <div class="studio-ribbon">
+    <span class="studio-ribbon-badge">Contact &amp; Enquiry</span>
+    <span>Anshu Properties — Content Creation, Video Production, Scriptwriting &amp; Social Roadmaps.</span>
+  </div>
+
+  <!-- Header -->
+  <header class="studio-header">
+    <div class="container header-inner">
+      <a href="index.html" class="studio-logo">
+        <img src="../assets/logo.jpg" alt="Anshu Properties Logo">
+        <div class="studio-logo-text">
+          Anshu Properties
+          <span>Content Studio</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-desktop">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-dropdown">
+            <a href="video-content.html" class="nav-link">Services &#9662;</a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="video-content.html">Video Content Creation</a></li>
+              <li><a href="scriptwriting.html">Scriptwriting &amp; Copy</a></li>
+              <li><a href="social-media-planning.html">Social Media Planning</a></li>
+              <li><a href="website-content.html">Website Content &amp; Landing Pages</a></li>
+              <li><a href="social-management-design.html">Social Management &amp; Design</a></li>
+              <li><a href="seo-blog-content.html">SEO Content &amp; Blog Writing</a></li>
+            </ul>
+          </li>
+          <li><a href="industries.html" class="nav-link">Industries</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing &amp; Packages</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-gold btn-sm">Get a Quote</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="video-content.html">Video Content Creation</a>
+      <a href="scriptwriting.html">Scriptwriting &amp; Copy</a>
+      <a href="social-media-planning.html">Social Media Planning</a>
+      <a href="website-content.html">Website Content &amp; Landing Pages</a>
+      <a href="social-management-design.html">Social Management &amp; Design</a>
+      <a href="seo-blog-content.html">SEO Content &amp; Blogs</a>
+      <a href="industries.html">Industries We Serve</a>
+      <a href="pricing.html">Pricing &amp; Packages</a>
+      <a href="portfolio.html">Portfolio Concepts</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="active" style="color:var(--gold);font-weight:700;">Discuss Your Project &rarr;</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="section section-dark" style="padding:70px 0 60px;">
+    <div class="container" style="text-align:center;max-width:820px;">
+      <span class="eyebrow eyebrow-dark">Project Enquiry</span>
+      <h1 style="font-size:clamp(30px, 3.8vw, 44px);margin-bottom:16px;">
+        Let’s Build Your <span style="color:var(--gold-light);">Content Strategy</span>
+      </h1>
+      <p style="font-size:16.5px;color:rgba(255,255,255,0.8);line-height:1.65;">
+        Tell us about your brand, your target audience, and the content you need. We'll recommend a suitable package or custom scope.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Form & Sidebar Section -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="enquiry-card">
+        <div class="enquiry-grid">
+
+          <!-- Form Area -->
+          <div>
+            <h3 style="font-size:22px;margin-bottom:8px;">Project Inquiry Form</h3>
+            <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:24px;">
+              Submitting pre-fills your complete requirements directly to our team via WhatsApp for instant response.
+            </p>
+
+            <form onsubmit="handleStudioEnquiry(event)">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div class="form-group">
+                  <label for="client-name">Your Full Name *</label>
+                  <input type="text" id="client-name" class="form-control" placeholder="e.g. Rahul Verma" required>
+                </div>
+                <div class="form-group">
+                  <label for="business-name">Business / Brand Name *</label>
+                  <input type="text" id="business-name" class="form-control" placeholder="e.g. Apex Learning / Personal Brand" required>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div class="form-group">
+                  <label for="client-email">Email Address</label>
+                  <input type="email" id="client-email" class="form-control" placeholder="you@domain.com">
+                </div>
+                <div class="form-group">
+                  <label for="client-industry">Your Industry Sector</label>
+                  <select id="client-industry" class="form-control">
+                    <option value="Real Estate Marketing">Real Estate (Content Marketing Client)</option>
+                    <option value="Education & Coaching">Education &amp; Coaching</option>
+                    <option value="Local Business & Retail">Local Business &amp; Retail</option>
+                    <option value="Founder / Personal Brand" selected>Founder / Personal Brand</option>
+                    <option value="Startup / Tech">Startup / Tech</option>
+                    <option value="Professional Services">Professional Services (Consultant/CA/Lawyer)</option>
+                    <option value="Fitness & Lifestyle">Fitness &amp; Lifestyle</option>
+                    <option value="Product / D2C Brand">Product / D2C Brand</option>
+                    <option value="Other Industry">Other Industry</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div class="form-group">
+                  <label for="service-interest">Primary Service Required</label>
+                  <select id="service-interest" class="form-control">
+                    <option value="Short-Form Video & Reels Creation">Video Content &amp; Reels</option>
+                    <option value="Scriptwriting & Hooks">Scriptwriting &amp; Hooks</option>
+                    <option value="Social Media Content Planning" selected>Social Media Content Planning</option>
+                    <option value="Website Content & Copywriting">Website Content &amp; Landing Pages</option>
+                    <option value="Social Media Management & Design">Social Media Design &amp; Carousels</option>
+                    <option value="SEO Content & Blogs">SEO Content &amp; Blogs</option>
+                    <option value="All-Inclusive Monthly Package">All-Inclusive Monthly Package</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="budget-range">Target Budget Range</label>
+                  <select id="budget-range" class="form-control">
+                    <option value="Starter (₹2,999/mo)">Starter (₹2,999/mo or below)</option>
+                    <option value="Growth (₹6,999/mo)" selected>Growth (₹6,999/mo)</option>
+                    <option value="Premium (₹12,999/mo)">Premium (₹12,999/mo)</option>
+                    <option value="Custom Project Scope">Custom Scope / One-Time</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="project-notes">Project Description &amp; Goals</label>
+                <textarea id="project-notes" class="form-control" placeholder="Tell us what you sell, your target platforms (Instagram, YouTube, Website), and what challenges you face with your current content..."></textarea>
+              </div>
+
+              <div style="margin-bottom:20px;">
+                <label style="font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:8px;cursor:pointer;">
+                  <input type="checkbox" required checked>
+                  I consent to being contacted by Anshu Properties regarding my project enquiry.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="width:100%;padding:14px 20px;font-size:15px;justify-content:center;">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><polygon points="8,5 19,12 8,19"/></svg>
+                Send Project Enquiry via WhatsApp
+              </button>
+              <p style="font-size:11.5px;color:var(--text-muted);margin-top:8px;text-align:center;">
+                No backend required &bull; Directly connects to Anshu Dubey on WhatsApp for prompt review.
+              </p>
+            </form>
+          </div>
+
+          <!-- Direct Channels Sidebar -->
+          <div>
+            <div class="form-channel-sidebar">
+              <h4 style="font-size:17px;margin-bottom:16px;">Direct Studio Channels</h4>
+              <p style="font-size:13px;color:var(--text-muted);line-height:1.55;margin-bottom:24px;">
+                Have a quick question or want to discuss a customized production schedule? Reach out directly.
+              </p>
+
+              <div class="channel-row">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div class="channel-info">
+                  <h6>WhatsApp &amp; Call</h6>
+                  <a href="https://wa.me/918303727724?text=Hi%20Anshu%20Properties,%20I%20want%20to%20discuss%20Content%20Services." target="_blank">+91-83037-27724</a>
+                </div>
+              </div>
+
+              <div class="channel-row">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </div>
+                <div class="channel-info">
+                  <h6>Instagram Official</h6>
+                  <a href="https://www.instagram.com/anshupropertyvns/" target="_blank">@anshupropertyvns</a>
+                </div>
+              </div>
+
+              <div class="channel-row">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="channel-info">
+                  <h6>Production Hub</h6>
+                  <p>Varanasi, UP &bull; Serving clients remotely across India</p>
+                </div>
+              </div>
+
+              <div style="margin-top:24px;padding-top:16px;border-top:1px dashed #CBD5E1;font-size:12px;color:var(--text-muted);line-height:1.5;">
+                ✦ <strong>Hours:</strong> Mon &ndash; Sat: 10:00 AM &ndash; 7:00 PM IST.<br>
+                Consultation calls are scheduled by appointment.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="studio-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="studio-logo" style="margin-bottom:14px;">
+            <img src="../assets/logo.jpg" alt="Anshu Properties Logo">
+            <div class="studio-logo-text" style="color:#FFFFFF;">
+              Anshu Properties
+              <span style="color:var(--gold-light);">Content Studio</span>
+            </div>
+          </div>
+          <p style="font-size:13.5px;color:rgba(255,255,255,0.7);line-height:1.6;">
+            A creative content studio helping businesses, founders and personal brands communicate ideas through engaging videos, strategic content, compelling copy and professional storytelling.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Studio Services</h4>
+          <ul class="footer-links">
+            <li><a href="video-content.html">Video Content Creation</a></li>
+            <li><a href="scriptwriting.html">Scriptwriting &amp; Copy</a></li>
+            <li><a href="social-media-planning.html">Social Media Planning</a></li>
+            <li><a href="website-content.html">Website Content &amp; Copy</a></li>
+            <li><a href="social-management-design.html">Social Management &amp; Design</a></li>
+            <li><a href="seo-blog-content.html">SEO Content &amp; Blogs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Studio Home</a></li>
+            <li><a href="about.html">About Anshu Properties</a></li>
+            <li><a href="industries.html">Industries We Serve</a></li>
+            <li><a href="pricing.html">Pricing &amp; Packages</a></li>
+            <li><a href="portfolio.html">Concept Portfolio</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact &amp; Enquiry</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect Directly</h4>
+          <p style="font-size:13.5px;color:rgba(255,255,255,0.7);margin-bottom:10px;">
+            WhatsApp &amp; Phone: <strong>+91-83037-27724</strong>
+          </p>
+          <p style="font-size:13.5px;color:rgba(255,255,255,0.7);margin-bottom:14px;">
+            Varanasi, UP &bull; Working with clients across India
+          </p>
+          <a href="https://wa.me/918303727724?text=Hi%20Anshu%20Properties,%20I%20want%20to%20discuss%20Content%20Services." target="_blank" class="btn btn-gold btn-sm">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Anshu Properties. All Rights Reserved. Creative Content Studio &amp; Digital Storytelling.</p>
+        <p style="color:rgba(255,255,255,0.45);font-size:12px;">“Anshu Properties” is a content studio brand name. Not a real estate or brokerage business.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/studio.js"></script>
+</body>
+</html>
